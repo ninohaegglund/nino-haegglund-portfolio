@@ -2,10 +2,10 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "Nino is an exceptional developer who consistently delivers high-quality solutions. His expertise in Azure and microservices transformed our infrastructure.",
-    author: "Erik Lindqvist",
-    role: "CTO, Tech Innovations AB",
-    avatar: "/placeholder.svg",
+    quote: "Nino har självständigt byggt en viktig integration som hämtar in extern information till vår s.k marknadsplats i vår portal. Denna marknadsvy har blivit en viktigt anledning för kunder att välja Digital Engines lösning.",
+    author: "Tuan Nguyen",
+    role: "Automationsutvecklare, Digital Engine AB",
+    avatar: "/images/tuan.png",
   },
   {
     quote: "Working with Nino was a game-changer for our project. His deep understanding of .NET Core and clean architecture principles helped us scale efficiently.",
@@ -56,7 +56,14 @@ const TestimonialsSection = () => {
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-secondary" />
+                <img
+                  src={testimonial.avatar}
+                  alt={`${testimonial.author} avatar`}
+                  className="w-10 h-10 rounded-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = '/placeholder.svg';
+                  }}
+                />
                 <div>
                   <p className="font-medium text-sm">{testimonial.author}</p>
                   <p className="text-xs text-muted-foreground">{testimonial.role}</p>
