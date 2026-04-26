@@ -1,9 +1,21 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import CaseStudyModal, { type ProjectCaseStudy } from '@/components/CaseStudyModal';
 
-const projects = [
-    {
+type Project = ProjectCaseStudy & {
+  id: number;
+  description: string;
+  image: string;
+  category: string;
+  tags: string[];
+  outcomes: string[];
+  github: string;
+  live: string;
+};
+
+const projects: Project[] = [
+  {
   id: 3,
   title: 'Personal Job Application Manager',
   description: 'A fullstack web application for searching, saving, and managing job applications using external job ad data, authentication, and structured application tracking.',
@@ -17,7 +29,22 @@ const projects = [
   ],
   github: 'https://github.com/ninohaegglund/JobApplicationManager',
   live: 'https://github.com/ninohaegglund/personal-job-application-manager',
-},
+  caseStudy: {
+    problem: 'Job searching across multiple sources was fragmented, and keeping track of applications, statuses, and related details became inconsistent and time-consuming.',
+    solution: 'I built a fullstack application that centralizes job discovery and application tracking with authenticated, user-specific workflows and a clean data model for status updates.',
+    techStack: ['ASP.NET Core', 'React', 'TypeScript', 'Entity Framework Core', 'SQL Server'],
+    whatIBuilt: [
+      'Built REST API endpoints to search, save, and manage job applications',
+      'Implemented authentication to isolate each user\'s application data securely',
+      'Created React views for organizing jobs by status and tracking progress over time'
+    ],
+    whatILearned: [
+      'Strengthened my understanding of fullstack architecture and API-driven design',
+      'Practiced connecting React state flows to ASP.NET Core backend operations',
+      'Improved at structuring relational data for practical, user-focused workflows'
+    ]
+  }
+  },
   {
     id: 1,
     title: 'PC Builder',
@@ -32,6 +59,21 @@ const projects = [
     ],
     github: 'https://github.com/ninohaegglund/PCBuilder',
     live: '#',
+    caseStudy: {
+      problem: 'Building and ordering custom PCs involved multiple disconnected steps, making it difficult to manage products, customers, and order flow in one system.',
+      solution: 'I created a fullstack ASP.NET Core application that connects MVC screens with backend APIs to manage computers, customers, and orders through consistent CRUD workflows.',
+      techStack: ['ASP.NET Core', 'MVC', 'Web API', 'Entity Framework Core', 'SQL Server', 'C#', 'Bootstrap'],
+      whatIBuilt: [
+        'Implemented CRUD endpoints and UI flows for computers, customers, and orders',
+        'Connected MVC frontend components with backend API endpoints',
+        'Applied DTOs, validation, and mapping for safer and cleaner data exchange'
+      ],
+      whatILearned: [
+        'Deepened my understanding of layered architecture in .NET applications',
+        'Learned to keep frontend and backend contracts aligned through DTO design',
+        'Improved at modeling relational data for real business workflows'
+      ]
+    }
   },
   {
     id: 2,
@@ -43,6 +85,21 @@ const projects = [
     outcomes: ['Built project CRUD functionality', 'Implemented role-based task management', 'Created responsive dashboard views'],
     github: '#',
     live: '#',
+    caseStudy: {
+      problem: 'Teams lacked a single view of project progress, and updates were often delayed or unclear across roles and workstreams.',
+      solution: 'I built a project management application with role-aware workflows and responsive dashboards to keep project state visible and easy to update.',
+      techStack: ['ASP.NET Core', 'React', 'TypeScript', 'SignalR', 'Azure Functions'],
+      whatIBuilt: [
+        'Implemented project and task CRUD features with role-based access controls',
+        'Developed dashboard components for visualizing project status and priorities',
+        'Integrated real-time update patterns for shared project visibility'
+      ],
+      whatILearned: [
+        'Improved at designing role-based behavior in fullstack applications',
+        'Gained practical experience balancing responsiveness and data consistency',
+        'Learned to structure UI around decision-making, not just data display'
+      ]
+    }
   },
 
   {
@@ -55,6 +112,21 @@ const projects = [
     outcomes: ['', '', ''],
     github: 'https://github.com/ninohaegglund/daily-checkin-api',
     live: 'https://daily-checkin-app.netlify.app/',
+    caseStudy: {
+      problem: 'Tracking mental and physical well-being was inconsistent without a simple, structured way to log daily patterns and review trends over time.',
+      solution: 'I created a React frontend with an ASP.NET Core API to capture daily check-ins, persist entries, and present history in a way that encourages reflection and consistency.',
+      techStack: ['ASP.NET Core', 'React', 'TypeScript', 'Entity Framework Core', 'Identity'],
+      whatIBuilt: [
+        'Built API endpoints for creating and retrieving user check-in records',
+        'Developed frontend forms and views for daily logging and historical review',
+        'Implemented identity-based access so users only interact with their own data'
+      ],
+      whatILearned: [
+        'Strengthened my understanding of authenticated user flows end to end',
+        'Practiced designing APIs and UI states around recurring user habits',
+        'Improved at aligning UX decisions with personal data privacy requirements'
+      ]
+    }
   },
 ];
 
@@ -62,6 +134,21 @@ const categories = ['All', 'Backend', 'Full Stack', 'Frontend'];
 
 const ProjectsSection = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const handleCaseStudyOpen = (project: Project) => {
+    setSelectedProject(project);
+    setIsCaseStudyOpen(true);
+  };
+
+  const handleCaseStudyOpenChange = (open: boolean) => {
+    setIsCaseStudyOpen(open);
+
+    if (!open) {
+      setSelectedProject(null);
+    }
+  };
 
   const filteredProjects = activeCategory === 'All'
     ? projects
@@ -172,18 +259,25 @@ const ProjectsSection = () => {
                     <ExternalLink size={16} />
                     Live Demo
                   </a>
-                  <a
-                    href="#"
+                  <button
+                    type="button"
+                    onClick={() => handleCaseStudyOpen(project)}
                     className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors ml-auto"
                   >
                     Case Study
                     <ArrowRight size={16} />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        <CaseStudyModal
+          open={isCaseStudyOpen}
+          onOpenChange={handleCaseStudyOpenChange}
+          project={selectedProject}
+        />
       </div>
     </section>
   );
