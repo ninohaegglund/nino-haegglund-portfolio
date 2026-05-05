@@ -39,7 +39,7 @@ const Navigation = () => {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="nav-link"
             >
               {link.label}
             </a>

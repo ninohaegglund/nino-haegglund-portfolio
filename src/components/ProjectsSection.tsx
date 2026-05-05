@@ -212,7 +212,7 @@ const ProjectsSection = () => {
     : projects.filter(p => p.category === activeCategory);
 
   return (
-    <section id="projects" className="py-24">
+    <section id="projects" className="py-28 section-alt">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -244,7 +244,7 @@ const ProjectsSection = () => {
           {filteredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="group glass-card rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 animate-fade-in-up"
+              className="group zen-card overflow-hidden hover:border-primary/40 animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Project Image */}
@@ -265,7 +265,7 @@ const ProjectsSection = () => {
               </div>
 
               {/* Project Content */}
-              <div className="p-6">
+              <div className="p-7">
                 <h3 className="font-display text-xl font-bold mb-3 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
