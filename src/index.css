@@ -23,7 +23,7 @@
     --secondary-foreground: 25 18% 22%;
 
     --muted: 32 18% 90%;
-    --muted-foreground: 28 10% 42%;
+    --muted-foreground: 26 12% 34%;
 
     --accent: 28 35% 88%;
     --accent-foreground: 25 18% 18%;
@@ -147,14 +147,29 @@
   }
 
   .zen-card {
-    @apply rounded-2xl bg-card border border-border/70 transition-all duration-300;
+    @apply rounded-2xl bg-card border border-border/60 transition-all duration-300;
     box-shadow: var(--shadow-soft);
   }
 
   .zen-card:hover {
-    box-shadow: var(--shadow-card);
-    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-3px);
+    border-color: hsl(var(--border));
   }
+
+  .section-alt {
+    background:
+      linear-gradient(180deg, transparent 0%, hsl(32 24% 95% / 0.55) 12%, hsl(32 24% 95% / 0.55) 88%, transparent 100%);
+  }
+
+  .nav-link {
+    @apply relative text-sm text-muted-foreground hover:text-foreground transition-colors duration-200;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 h-px w-0 bg-foreground/70 transition-all duration-300;
+  }
+  .nav-link:hover::after { @apply w-full; }
 
   .section-eyebrow {
     @apply inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground font-medium;
