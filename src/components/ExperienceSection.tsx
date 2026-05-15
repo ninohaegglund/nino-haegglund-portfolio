@@ -92,28 +92,6 @@ const ExperienceSection = () => {
             </div>
           </div>
 
-          {/* Certifications */}
-          <div >
-            <h3 className="font-display text-xl font-bold mb-6 flex items-center gap-2">
-              <Briefcase className="text-primary" size={20} />
-              Certifications
-            </h3>
-            <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <div
-                  key={cert.name}
-                  className="glass-card rounded-xl p-4 hover:border-primary/50 transition-all duration-300 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <h4 className="font-medium mb-1">{cert.name}</h4>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>{cert.issuer}</span>
-                    <span>{cert.year}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
