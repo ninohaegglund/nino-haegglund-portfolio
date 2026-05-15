@@ -1,4 +1,4 @@
-import { Briefcase, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 const experiences = [
   {
@@ -39,16 +39,16 @@ const ExperienceSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Experience & <span className="text-gradient">Certifications</span>
+            <span className="text-gradient">Experience</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             My professional journey in software development and cloud architecture.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="max-w-3xl mx-auto">
           {/* Timeline */}
-          <div className="lg:col-span-2">
+          <div>
             <div className="relative">
               {/* Timeline Line */}
               <div className="absolute left-8 top-0 bottom-0 w-px bg-border" />
@@ -92,28 +92,6 @@ const ExperienceSection = () => {
             </div>
           </div>
 
-          {/* Certifications */}
-          <div >
-            <h3 className="font-display text-xl font-bold mb-6 flex items-center gap-2">
-              <Briefcase className="text-primary" size={20} />
-              Certifications
-            </h3>
-            <div className="space-y-4">
-              {certifications.map((cert, index) => (
-                <div
-                  key={cert.name}
-                  className="glass-card rounded-xl p-4 hover:border-primary/50 transition-all duration-300 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <h4 className="font-medium mb-1">{cert.name}</h4>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground">
-                    <span>{cert.issuer}</span>
-                    <span>{cert.year}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>
