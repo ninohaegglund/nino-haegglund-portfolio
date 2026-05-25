@@ -35,7 +35,7 @@ const HeroSection = () => {
             className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed animate-fade-in-up"
             style={{ animationDelay: '0.2s' }}
           >
-            A .NET developer crafting calm, considered backends, APIs and fullstack web applications.
+            A junior .NET developer focused on building clean APIs, structured backends and user-friendly web applications.
           </p>
 
           {/* Tech Stack */}
