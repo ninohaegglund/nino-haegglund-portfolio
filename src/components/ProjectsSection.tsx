@@ -65,7 +65,7 @@ const projects: Project[] = [
     
   ],
   github: 'https://github.com/ninohaegglund/ECommerce-platform',
-  live: 'https://github.com/ninohaegglund/ECommerce-platform-client',
+  live: 'https://spelvalvet.shop/',
   caseStudy: {
     problem: 'E-commerce systems often involve several separate business areas such as product management, user identity, shopping cart, orders, checkout, and payments. The goal was to build a system where these responsibilities are separated into independent services instead of one large monolithic application.',
     solution: 'We built a full-stack e-commerce application using a microservices-based architecture. Each main business area is handled by its own API, including Catalog API, Order API, Identity API, Product/Cart API, and Payment Service API. The frontend connects these services into one user flow where a customer can select products, add them to the cart, continue to checkout, enter required information, and proceed to the payment step.',
