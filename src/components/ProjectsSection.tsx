@@ -17,6 +17,32 @@ type Project = ProjectCaseStudy & {
 
 const projects: Project[] = [
   {
+    id: 6,
+    title: 'Dr. News CMS',
+    description: 'Modern multilingual news website built with Umbraco CMS. Features real-time updates, category filtering, weather integration, and WCAG AA accessibility compliance.',
+    image: '/images/drnews.png',
+    category: 'Full Stack',
+    tags: ['Umbraco', 'C#', '.NET', 'Razor', 'SQL Server', 'TypeScript'],
+    outcomes: [],
+    github: 'https://github.com/ninohaegglund/drnews-cms',
+    live: 'https://github.com/ninohaegglund/drnews-cms',
+    caseStudy: {
+      problem: 'News sites required a maintainable CMS-backed solution with multilingual support and accessible design.',
+      solution: 'Built a highly accessible, multilingual news site using Umbraco CMS with real-time features and structured content models for editors.',
+      techStack: ['Umbraco', 'C#', '.NET', 'Razor', 'SQL Server', 'TypeScript'],
+      whatIBuilt: [
+        'Created editor-friendly content models and templates in Umbraco',
+        'Implemented real-time updates and category filtering',
+        'Ensured WCAG AA accessibility compliance and responsive design'
+      ],
+      whatILearned: [
+        'Deepened knowledge of headless/CMS-driven architectures',
+        'Improved accessibility-first frontend patterns',
+        'Gained experience integrating server-rendered Razor views with client-side enhancements'
+      ]
+    }
+  },
+  {
   id: 3,
   title: 'Personal Job Application Manager',
   description: 'A fullstack web application for searching, saving, and managing job applications using external job ad data, authentication, and structured application tracking.',
