@@ -16,32 +16,7 @@ type Project = ProjectCaseStudy & {
 };
 
 const projects: Project[] = [
-  {
-    id: 6,
-    title: 'Dr. News CMS',
-    description: 'Modern multilingual news website built with Umbraco CMS. Features real-time updates, category filtering, weather integration, and WCAG AA accessibility compliance.',
-    image: '/images/drnews.png',
-    category: 'Full Stack',
-    tags: ['Umbraco', 'C#', '.NET', 'Razor', 'SQL Server', 'TypeScript'],
-    outcomes: [],
-    github: 'https://github.com/ninohaegglund/drnews-cms',
-    live: 'https://github.com/ninohaegglund/drnews-cms',
-    caseStudy: {
-      problem: 'News sites required a maintainable CMS-backed solution with multilingual support and accessible design.',
-      solution: 'Built a highly accessible, multilingual news site using Umbraco CMS with real-time features and structured content models for editors.',
-      techStack: ['Umbraco', 'C#', '.NET', 'Razor', 'SQL Server', 'TypeScript'],
-      whatIBuilt: [
-        'Created editor-friendly content models and templates in Umbraco',
-        'Implemented real-time updates and category filtering',
-        'Ensured WCAG AA accessibility compliance and responsive design'
-      ],
-      whatILearned: [
-        'Deepened knowledge of headless/CMS-driven architectures',
-        'Improved accessibility-first frontend patterns',
-        'Gained experience integrating server-rendered Razor views with client-side enhancements'
-      ]
-    }
-  },
+
   {
   id: 3,
   title: 'Personal Job Application Manager',
@@ -177,32 +152,63 @@ const projects: Project[] = [
     }
   },
 
+{
+  id: 3,
+  title: 'Alien Vision Prototype',
+  description: 'Work-in-progress 2D Unity prototype exploring an alien vision mechanic for revealing hidden objects, hazards, and paths.',
+  image: '/images/j-rod.gif',
+  category: 'Game Development',
+  tags: ['Unity', 'C#', '2D Physics', 'Cinemachine', 'Original Sprites'],
+  outcomes: [
+    'Private — available on request'
+  ],
+  github: '#',
+  live: '#',
+  caseStudy: {
+    problem: 'I wanted to experiment with a 2D game mechanic where the player does not always see the full environment and must use a special ability to uncover hidden elements.',
+    solution: 'I created a Unity prototype centered around an alien vision ability that reveals or hides nearby objects, giving the player a reason to explore carefully and interact with the environment.',
+    techStack: ['Unity', 'C#', '2D Physics', 'Cinemachine', 'Unity UI', 'Particle Systems'],
+    whatIBuilt: [
+      'Implemented basic top-down 2D player movement using Rigidbody2D',
+      'Created an alien vision system with animated aura visuals and particle feedback',
+      'Built revealable and concealable object behavior based on player proximity',
+      'Added prototype systems for keys, locked doors, coins, hazards, and scene resets',
+      'Implemented a coin counter UI connected to the player inventory',
+      'Designed the current sprite assets myself and added a looping music track with an early sound effect'
+    ],
+    whatILearned: [
+      'Practiced building gameplay systems with Unity components and C# scripts',
+      'Learned how to connect movement, collision, UI, audio, and scene management in a prototype',
+      'Explored how a single mechanic can shape level design and player decision-making'
+    ]
+  }
+},
+
   {
-    id: 4,
-    title: 'Daily check in',
-    description: 'A web application for tracking mental and physical well-being over time. The frontend is implemented in React and communicates with a RESTful API built in ASP.NET Core.',
-    image: '/images/daily-check.png',
-    category: 'Frontend',
-    tags: ['ASP.NET Core', 'MVC', 'C#', 'EF Core', 'Identity'],
-    outcomes: ['', '', ''],
-    github: 'https://github.com/ninohaegglund/daily-checkin-api',
-    live: 'https://daily-checkin-app.netlify.app/',
+    id: 6,
+    title: 'Dr. News CMS',
+    description: 'Modern multilingual news website built with Umbraco CMS. Features real-time updates, category filtering, weather integration, and WCAG AA accessibility compliance.',
+    image: '/images/drnews.png',
+    category: 'Full Stack',
+    tags: ['Umbraco', 'C#', '.NET', 'Razor', 'SQL Server', 'TypeScript'],
+    outcomes: [],
+    github: 'https://github.com/ninohaegglund/drnews-cms',
+    live: 'https://github.com/ninohaegglund/drnews-cms',
     caseStudy: {
-      problem: 'Tracking mental and physical well-being was inconsistent without a simple, structured way to log daily patterns and review trends over time.',
-      solution: 'I created a React frontend with an ASP.NET Core API to capture daily check-ins, persist entries, and present history in a way that encourages reflection and consistency.',
-      techStack: ['ASP.NET Core', 'React', 'TypeScript', 'Entity Framework Core', 'Identity'],
+      problem: 'News sites required a maintainable CMS-backed solution with multilingual support and accessible design.',
+      solution: 'Built a highly accessible, multilingual news site using Umbraco CMS with real-time features and structured content models for editors.',
+      techStack: ['Umbraco', 'C#', '.NET', 'Razor', 'SQL Server', 'TypeScript'],
       whatIBuilt: [
-        'Built API endpoints for creating and retrieving user check-in records',
-        'Developed frontend forms and views for daily logging and historical review',
-        'Implemented identity-based access so users only interact with their own data'
+        'Created editor-friendly content models and templates in Umbraco',
+        'Implemented real-time updates and category filtering',
+        'Ensured WCAG AA accessibility compliance and responsive design'
       ],
       whatILearned: [
-        'Strengthened my understanding of authenticated user flows end to end',
-        'Practiced designing APIs and UI states around recurring user habits',
-        'Improved at aligning UX decisions with personal data privacy requirements'
+        'Deepened knowledge of headless/CMS-driven architectures',
+        'Improved accessibility-first frontend patterns',
+        'Gained experience integrating server-rendered Razor views with client-side enhancements'
       ]
     }
-    
   },
 
 
