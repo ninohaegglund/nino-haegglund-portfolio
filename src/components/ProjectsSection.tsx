@@ -18,6 +18,36 @@ type Project = ProjectCaseStudy & {
 const projects: Project[] = [
 
   {
+    id: 4,
+    title: 'Daily Check-In',
+    description: 'A mood and wellness tracker for logging daily check-ins, storing stats in a backend database, and reviewing trends over time.',
+    image: '/images/daily-check.png',
+    category: 'Full Stack',
+    tags: ['ASP.NET Core', 'React', 'TypeScript', 'Entity Framework Core', 'SQL Server', 'Identity'],
+    outcomes: [
+    
+    ],
+    github: 'https://github.com/ninohaegglund/daily-checkin-api',
+    live: 'https://daily-checkin-app.netlify.app/',
+    caseStudy: {
+      problem: 'Tracking mental and physical well-being was inconsistent without a simple, structured way to log daily patterns and review trends over time.',
+      solution: 'I created a React frontend with an ASP.NET Core API to capture daily check-ins, persist entries, and present history in a way that encourages reflection and consistency.',
+      techStack: ['ASP.NET Core', 'React', 'TypeScript', 'Entity Framework Core', 'Identity'],
+      whatIBuilt: [
+        'Built API endpoints for creating and retrieving user check-in records',
+        'Developed frontend forms and views for daily logging and historical review',
+        'Implemented identity-based access so users only interact with their own data'
+      ],
+      whatILearned: [
+        'Strengthened my understanding of authenticated user flows end to end',
+        'Practiced designing APIs and UI states around recurring user habits',
+        'Improved at aligning UX decisions with personal data privacy requirements'
+      ]
+    }
+  },
+
+
+  {
   id: 3,
   title: 'Personal Job Application Manager',
   description: 'A fullstack web application for searching, saving, and managing job applications using external job ad data, authentication, and structured application tracking.',
